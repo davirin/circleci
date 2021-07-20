@@ -5,12 +5,12 @@ jobs:
     docker:
       - image: python:3.6.3-jessie
 
-    working_directory: /circleci/TechDoc
+    working_directory: ~davirin/circleci/TechDoc
     steps:
       - run:
           name: Creating Artifact
           command: |
-            echo "This is a sample artifact" > /circleci/TechDoc
+            echo "This is a sample artifact" > /techdoc/artifact
 
       - store_artifacts:
           path: /techdoc/artifact
