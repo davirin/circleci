@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Creating Artifact
           command: |
-            echo "This is a sample artifact" > /techdoc/artifact
+            echo "This is a sample artifact" > ~davirin/circleci/TechDoc
 
       - store_artifacts:
           path: /techdoc/artifact
