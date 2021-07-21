@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Upload as artifact
           command: 
-            cd /Techdoc/metrics.adoc > /tmp/artifact-1
+           /Techdoc/metrics.adoc > /tmp/artifact-1
 
       - store_artifacts:
           path: /tmp/artifact-1
