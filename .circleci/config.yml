@@ -1,8 +1,21 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.2
+      - image: buildpack-deps:trusty
+
+    working_directory: /Techdoc
     steps:
-      - checkout
-      - run: echo "hello world"
+      - run:
+          name: Upload as artifact
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
