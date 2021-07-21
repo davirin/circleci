@@ -1,13 +1,15 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: buildpack-deps:trusty
+
     steps:
       - checkout
       - run:
           name: Upload as artifact
           command: 
-           /Techdoc/metrics.adoc > /tmp/artifact-1
+           ./Techdoc/metrics.adoc
 
       - store_artifacts:
-          path: /tmp/artifact-1
-          destination: artifact-file
+          path: /artifact-1
