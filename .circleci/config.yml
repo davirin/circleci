@@ -4,12 +4,11 @@ jobs:
     docker:
       - image: buildpack-deps:trusty
 
-    working_directory: /Techdoc
     steps:
       - run:
           name: Upload as artifact
           command: 
-            cd Techdoc/metrics.adoc > /tmp/artifact-1
+            cd circleCI/Techdoc/metrics.adoc > /tmp/artifact-1
 
       - store_artifacts:
           path: /tmp/artifact-1
