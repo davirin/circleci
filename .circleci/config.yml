@@ -8,7 +8,7 @@ jobs:
       - run:
           name: Upload as artifact
           command: 
-            cd circleCI/Techdoc/metrics.adoc > /tmp/artifact-1
+            cd ./Techdoc/metrics.adoc > /tmp/artifact-1
 
       - store_artifacts:
           path: /tmp/artifact-1
