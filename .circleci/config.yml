@@ -5,10 +5,11 @@ jobs:
       - image: buildpack-deps:trusty
 
     steps:
+      - checkout
       - run:
           name: Upload as artifact
           command: 
-            cd ./Techdoc/metrics.adoc > /tmp/artifact-1
+            cd Techdoc/metrics.adoc > /tmp/artifact-1
 
       - store_artifacts:
           path: /tmp/artifact-1
