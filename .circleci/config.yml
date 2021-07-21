@@ -1,16 +1,8 @@
 version: 2.1
-
 jobs:
   build:
     docker:
-      - image: python:3.6.3-jessie
-
-    working_directory: ~davirin/circleci/TechDoc
+      - image: circleci/node:4.8.2
     steps:
-      - run:
-          name: Creating Artifact
-          command: |
-            echo "This is a sample artifact" > ~davirin/circleci/TechDoc
-
-      - store_artifacts:
-          path: /techdoc/artifact
+      - checkout
+      - run: echo "hello world"
